@@ -87,3 +87,4 @@
       INSERT INTO 테이블 이름 (포멧)
         values(ex,ex,ex,ex)
      ~~~
+
