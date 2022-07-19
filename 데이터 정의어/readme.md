@@ -57,17 +57,16 @@
     CREATE TABLE NewOrders (
       orderid INTEGER PRIMARY KEY,
       custid INTEGER NOT NULL
-      FOREIGN(custid) REFERENCES NewCustomer(custid)
-      ON DELETE CASCADE,
       
-      // custid 외래키 설정 : ON DELETE CASCADE 옵션을 통해 NewCustomer 옵션을 통해 NewCustomer 의 
-      // 데이터 (custid=3)이 삭제될 경우 NewOrders 의 custid =3 이 연쇄 삭제(ON DELETE CASCADE) 된다.
       
       bookid INTEGER NOT NULL,
       saleprice INTEGER,
-      orderdate DATE
+      orderdate DATE,
     
-    
+      FOREIGN KEY(custid) REFERENCES NewCustomer(custid)ON DELETE CASCADE,
+      
+      // custid 외래키 설정 : ON DELETE CASCADE 옵션을 통해 NewCustomer 옵션을 통해 NewCustomer 의 
+      // 데이터 (custid=3)이 삭제될 경우 NewOrders 의 custid =3 이 연쇄 삭제(ON DELETE CASCADE) 된다.
     );
   ~~~
 
